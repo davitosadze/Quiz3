@@ -13,10 +13,10 @@ def attributes():
 
 def savetoJson():
     text = response.text
-    toJson = json.loads(text)
+    toJson = json.loads(text)   #CONVERT TO JSON
 
     with open('test.json', 'w') as f:
-        json.dump(toJson, f, indent=4)
+        json.dump(toJson, f, indent=4) #SAVE TO JSON
 
 
 def chemtvisSaintereso():
@@ -51,5 +51,9 @@ def insertData(db): #FUNCTION FOR INSERTING DATA TO DATABASE INSERT ONLY TITLE A
         cursor.execute('INSERT INTO TestTable (jsonTitle,jsonId) VALUES (?,?)', object)
         conn.commit()
 
-savetoJson()
+#SIMPLY CALL FUNCTIONS
 
+# attributes()
+# savetoJson()
+# chemtvisSaintereso()
+# createDatabase() #CREATE DATABASE FUNCTION AUTOMATICALLY INSERT DATA TO TABLES
